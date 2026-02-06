@@ -1,0 +1,232 @@
+Propuesta: Sitio Web Corporativo - Espacio en 20 (E20)
+Agencia de Marketing Digital
+www.E20.com.mx
+1. CONTEXTO DEL PROYECTO
+Empresa: Espacio en 20 (E20) Giro: Agencia de Marketing Digital especializada en transformación digital para PYMEs mexicanas Diferenciador clave: E20 no es una agencia de marketing tradicional. Su enfoque principal es ayudar a las PYMEs a adoptar sistemas ERP/CRM como herramientas de crecimiento, combinando estrategia digital con gestión empresarial automatizada. Dominio: www.E20.com.mx Tipo de proyecto: Sitio web corporativo independiente (NO forma parte del sistema ERP/SaaS existente)
+
+2. ESTILO Y TONO
+Tono: Corporativo serio y profesional
+Estilo visual: Limpio, moderno, minimalista con presencia ejecutiva
+Paleta de colores principal:
+Verde corporativo E20: #16a34a (verde institucional)
+Negro/gris oscuro: #111827 (fondos serios)
+Blanco: #ffffff (espacios limpios)
+Gris medio: #6b7280 (textos secundarios)
+Acento dorado sutil: #d4a853 (para detalles premium, opcional)
+Tipografía: Sans-serif profesional (Inter, Poppins o similar)
+Imágenes: Fotografías corporativas de alta calidad, íconos lineales profesionales
+NO usar: Emojis, colores neón, animaciones excesivas, elementos infantiles o casuales
+3. ESTRUCTURA DE PÁGINAS Y SECCIONES
+PÁGINA 1: INICIO (HOME)
+Hero Section:
+
+Imagen de fondo profesional (oficina moderna o equipo de trabajo)
+Gradiente oscuro sobre la imagen para legibilidad
+Título principal: "Transformamos tu negocio con estrategia digital e inteligencia empresarial"
+Subtítulo: "Agencia de marketing digital especializada en implementación de ERP/CRM para PYMEs mexicanas"
+Botón CTA principal: "Solicitar Consulta Gratuita"
+Botón CTA secundario: "Conocer Servicios"
+Sección "¿Por qué E20?":
+
+3-4 tarjetas con propuestas de valor:
+"Marketing con propósito" - No solo publicidad, sino estrategia integrada con tu gestión empresarial
+"Tecnología ERP/CRM" - Implementamos sistemas que automatizan tu operación
+"Resultados medibles" - Cada campaña conectada a datos reales de tu negocio
+"Acompañamiento total" - Desde la estrategia hasta la ejecución
+Sección "Servicios destacados":
+
+Vista previa de los 6 servicios principales con íconos
+Enlace a la página completa de servicios
+Sección "Cifras de impacto":
+
+Contadores animados:
+Empresas transformadas
+Campañas ejecutadas
+Años de experiencia
+Crecimiento promedio de clientes
+Sección "Testimoniales":
+
+Carrusel con 3-4 testimonios de clientes
+Nombre, empresa, foto (o iniciales), y cita
+Sección CTA final:
+
+Fondo verde corporativo
+"¿Listo para transformar tu negocio?"
+Botón: "Agendar una llamada"
+PÁGINA 2: SERVICIOS
+Encabezado:
+
+Título: "Nuestros Servicios"
+Subtítulo: "Soluciones integrales de marketing digital con enfoque en gestión empresarial ERP/CRM"
+Servicios detallados (cada uno con su sección):
+
+Gestión de Redes Sociales
+
+Descripción: Administración profesional de perfiles empresariales en Facebook, Instagram, LinkedIn, TikTok
+Enfoque E20: Contenido que educa sobre transformación digital y uso de ERP/CRM
+Incluye: Calendario editorial, diseño de contenido, community management, reportes mensuales
+Campañas Publicitarias Digitales
+
+Descripción: Facebook Ads, Google Ads, Instagram Ads, TikTok Ads
+Enfoque E20: Campañas que generan leads directamente al CRM del cliente
+Incluye: Segmentación, creativos, optimización, seguimiento de conversiones
+Diseño Gráfico y Branding
+
+Descripción: Identidad visual, logotipos, papelería, material digital
+Enfoque E20: Diseño alineado con la imagen profesional que requiere un negocio digitalizado
+Incluye: Manual de marca, plantillas para redes, material corporativo
+SEO y Posicionamiento Web
+
+Descripción: Optimización para motores de búsqueda, contenido estratégico
+Enfoque E20: Posicionar al cliente como referente en su industria
+Incluye: Auditoría SEO, keywords research, optimización on-page, link building
+Implementación ERP/CRM
+
+Descripción: Configuración e implementación del sistema de gestión empresarial E20
+Enfoque E20: Este es el diferenciador principal - no solo marketing, sino herramientas de gestión
+Incluye: Configuración, capacitación, migración de datos, soporte continuo
+Módulos: Facturación electrónica (CFDI 4.0), CRM, inventarios, contabilidad, nómina, punto de venta
+Consultoría en Transformación Digital
+
+Descripción: Diagnóstico y plan de acción para digitalizar procesos del negocio
+Enfoque E20: Unir marketing + gestión en una sola estrategia
+Incluye: Diagnóstico inicial, plan de transformación, acompañamiento, medición de resultados
+PÁGINA 3: NOSOTROS
+Encabezado:
+
+Título: "Quiénes Somos"
+Subtítulo: "Una agencia que entiende que el marketing efectivo empieza con una operación eficiente"
+Historia:
+
+Narrativa de cómo nació E20
+La visión de unir marketing digital con gestión empresarial
+El compromiso con las PYMEs mexicanas
+Misión:
+
+"Empoderar a las PYMEs mexicanas con herramientas digitales de marketing y gestión empresarial que impulsen su crecimiento sostenible."
+Visión:
+
+"Ser la agencia líder en México que integra marketing digital con soluciones ERP/CRM, transformando la manera en que las PYMEs operan y crecen."
+Valores:
+
+Innovación
+Compromiso
+Transparencia
+Resultados
+Automatización ("Todo Automatizado")
+Equipo (opcional):
+
+Tarjetas con foto, nombre, puesto de los miembros clave
+Si no se tienen fotos aún, usar iniciales con el estilo Avatar
+PÁGINA 4: PORTAFOLIO
+Encabezado:
+
+Título: "Nuestro Trabajo"
+Subtítulo: "Casos de éxito que demuestran resultados reales"
+Estructura:
+
+Filtros por categoría (Redes Sociales, Campañas, Branding, ERP/CRM, SEO)
+Tarjetas de proyectos con:
+Imagen del proyecto
+Nombre del cliente (con permiso) o industria
+Servicios aplicados
+Resultado clave (métrica de impacto)
+Al hacer clic: página de detalle con caso de estudio completo
+Nota: Inicialmente se puede tener con 3-4 casos de ejemplo y se van agregando con el tiempo.
+
+PÁGINA 5: BLOG
+Encabezado:
+
+Título: "Blog E20"
+Subtítulo: "Artículos, guías y tendencias sobre marketing digital y gestión empresarial"
+Estructura:
+
+Lista de artículos con imagen destacada, título, fecha, categoría, extracto
+Categorías sugeridas:
+Marketing Digital
+ERP/CRM
+Transformación Digital
+Redes Sociales
+Facturación Electrónica / SAT
+Casos de Éxito
+Barra lateral con: categorías, artículos populares, formulario de suscripción al newsletter
+Artículos iniciales sugeridos:
+
+"¿Por qué tu PYME necesita un CRM en 2025?"
+"5 errores que cometen las PYMEs en redes sociales"
+"Cómo la facturación electrónica puede ahorrarle tiempo a tu negocio"
+"Marketing digital + ERP: La combinación que transforma empresas"
+PÁGINA 6: TESTIMONIALES
+Encabezado:
+
+Título: "Lo que dicen nuestros clientes"
+Subtítulo: "Historias reales de transformación empresarial"
+Estructura:
+
+Tarjetas grandes con:
+Cita del cliente
+Nombre completo
+Empresa
+Servicio contratado
+Calificación (estrellas)
+Foto o iniciales
+PÁGINA 7: CONTACTO
+Encabezado:
+
+Título: "Contáctanos"
+Subtítulo: "Estamos listos para llevar tu negocio al siguiente nivel"
+Formulario de contacto:
+
+Nombre completo
+Empresa
+Email
+Teléfono
+Servicio de interés (dropdown: Redes Sociales, Campañas, Branding, SEO, ERP/CRM, Consultoría, Otro)
+Mensaje
+Botón: "Enviar Solicitud"
+Información de contacto:
+
+Dirección física (si aplica)
+Teléfono
+Email
+Horario de atención
+Redes sociales:
+
+Facebook, Instagram, LinkedIn, TikTok (con íconos)
+Mapa:
+
+Google Maps embebido (si hay ubicación física)
+ELEMENTOS GLOBALES (presentes en todas las páginas)
+Header/Navbar:
+
+Logo E20 a la izquierda
+Menú: Inicio | Servicios | Nosotros | Portafolio | Blog | Testimoniales | Contacto
+Botón CTA: "Consulta Gratuita"
+Responsive: menú hamburguesa en móvil
+Footer:
+
+Logo E20
+Links rápidos a todas las secciones
+Redes sociales
+Información legal
+"Derechos reservados Espacio en 20"
+Link a Aviso de Privacidad
+4. SECCIÓN PENDIENTE (NO INCLUIR AÚN)
+Precios/Paquetes: Se agregará en una fase posterior. Dejar la estructura preparada para añadirla después.
+5. REQUISITOS TÉCNICOS
+Framework: React + Vite + TypeScript (consistente con el ecosistema E20)
+Estilos: TailwindCSS
+Responsive: Diseño mobile-first, adaptable a tablet y desktop
+SEO: Meta tags, Open Graph, títulos únicos por página, sitemap
+Rendimiento: Optimización de imágenes, lazy loading
+Formulario: Envío de datos por email o a una base de datos simple
+Dark mode: Opcional pero recomendado para elegancia
+Hosting: Replit Deployments o el hosting que se prefiera
+6. INSTRUCCIONES PARA EL NUEVO PROYECTO
+Cuando se cree el nuevo proyecto en Replit para esta página web, copiar este documento completo como instrucciones iniciales. El agente tendrá todo el contexto necesario para construir el sitio desde cero.
+
+Instrucción inicial sugerida:
+
+"Construye un sitio web corporativo profesional para Espacio en 20 (E20), una agencia de marketing digital mexicana. Usa React + Vite + TypeScript + TailwindCSS. Sigue las especificaciones exactas del documento adjunto. El tono debe ser corporativo serio. Los colores principales son verde #16a34a, negro #111827, y blanco. Incluye todas las secciones descritas excepto Precios/Paquetes que queda pendiente."
+
+Documento generado como referencia para el proyecto web de Espacio en 20. Independiente del sistema ERP/SaaS ContableMX.
