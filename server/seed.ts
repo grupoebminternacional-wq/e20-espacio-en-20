@@ -104,6 +104,14 @@ export async function seed() {
       result: "150+ leads calificados por mes",
       services: ["Campañas Publicitarias", "ERP/CRM"],
     },
+    {
+      title: "CIE - Comunicación Interna de la Empresa",
+      client: "Visual World Ópticas",
+      category: "Desarrollo de Software",
+      description: "Red social corporativa exclusiva con capas de seguridad para mantener la comunicación dentro de la empresa. Funciona solo en horario laboral y mantiene la capacitación continua del personal, creando un ambiente de trabajo armónico y ahorrando tiempo y dinero en la capacitación de empleados.",
+      result: "Comunicación segura y capacitación continua",
+      services: ["Desarrollo de Software", "Consultoría Digital", "ERP/CRM"],
+    },
   ]);
 
   console.log("Seed data inserted successfully");

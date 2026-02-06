@@ -15,6 +15,7 @@ const categories = [
   "Branding",
   "ERP/CRM",
   "SEO",
+  "Desarrollo de Software",
 ];
 
 export default function Portafolio() {

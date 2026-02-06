@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { SiFacebook, SiInstagram, SiLinkedin, SiTiktok } from "react-icons/si";
+import { SiFacebook, SiInstagram, SiLinkedin } from "react-icons/si";
 
 const quickLinks = [
   { href: "/", label: "Inicio" },
@@ -45,9 +45,6 @@ export default function Footer() {
               <a href="#" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" data-testid="link-linkedin">
                 <SiLinkedin className="w-4 h-4" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-md bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" data-testid="link-tiktok">
-                <SiTiktok className="w-4 h-4" />
-              </a>
             </div>
           </div>
 
@@ -81,8 +78,8 @@ export default function Footer() {
             <h3 className="font-semibold text-sm uppercase tracking-wider mb-4 text-white">Contacto</h3>
             <ul className="space-y-3">
               <li className="text-sm text-gray-400">info@e20.com.mx</li>
-              <li className="text-sm text-gray-400">+52 (55) 1234-5678</li>
-              <li className="text-sm text-gray-400">Ciudad de México, México</li>
+              <li className="text-sm text-gray-400">221 282 5339</li>
+              <li className="text-sm text-gray-400">Ciudad de Puebla, Puebla</li>
               <li className="text-sm text-gray-400">Lun - Vie: 9:00 - 18:00</li>
             </ul>
           </div>

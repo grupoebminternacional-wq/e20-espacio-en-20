@@ -31,7 +31,7 @@ import {
   Send,
   CheckCircle2,
 } from "lucide-react";
-import { SiFacebook, SiInstagram, SiLinkedin, SiTiktok } from "react-icons/si";
+import { SiFacebook, SiInstagram, SiLinkedin } from "react-icons/si";
 import { insertContactSchema } from "@shared/schema";
 
 const contactFormSchema = insertContactSchema.extend({
@@ -262,7 +262,7 @@ export default function Contacto() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-foreground">Dirección</p>
-                      <p className="text-sm text-muted-foreground">Ciudad de México, México</p>
+                      <p className="text-sm text-muted-foreground">Ciudad de Puebla, Puebla</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -271,7 +271,7 @@ export default function Contacto() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-foreground">Teléfono</p>
-                      <p className="text-sm text-muted-foreground">+52 (55) 1234-5678</p>
+                      <p className="text-sm text-muted-foreground">221 282 5339</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -307,15 +307,12 @@ export default function Contacto() {
                   <a href="#" className="w-9 h-9 rounded-md bg-muted flex items-center justify-center hover-elevate" data-testid="link-contact-linkedin">
                     <SiLinkedin className="w-4 h-4 text-foreground" />
                   </a>
-                  <a href="#" className="w-9 h-9 rounded-md bg-muted flex items-center justify-center hover-elevate" data-testid="link-contact-tiktok">
-                    <SiTiktok className="w-4 h-4 text-foreground" />
-                  </a>
                 </div>
               </div>
 
               <Card className="overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240861.4452689206!2d-99.26087079999999!3d19.3909832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120892.94529344392!2d-98.27073585!3d19.0414398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc0bd5b80d7e5%3A0xd04ddef98a0bfc21!2sPuebla%2C%20Pue.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
                   className="w-full h-48 border-0"
                   allowFullScreen
                   loading="lazy"
