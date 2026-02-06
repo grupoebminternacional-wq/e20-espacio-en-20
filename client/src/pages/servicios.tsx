@@ -18,7 +18,7 @@ const services = [
     icon: Share2,
     title: "Gestión de Redes Sociales",
     description:
-      "Administración profesional de perfiles empresariales en Facebook, Instagram, LinkedIn y TikTok.",
+      "Administración profesional de perfiles empresariales en Facebook, Instagram y LinkedIn.",
     focus:
       "Contenido que educa sobre transformación digital y uso de ERP/CRM.",
     includes: [
@@ -32,7 +32,7 @@ const services = [
     icon: Megaphone,
     title: "Campañas Publicitarias Digitales",
     description:
-      "Facebook Ads, Google Ads, Instagram Ads y TikTok Ads con enfoque en conversiones.",
+      "Facebook Ads, Google Ads e Instagram Ads con enfoque en conversiones.",
     focus:
       "Campañas que generan leads directamente al CRM del cliente.",
     includes: [
