@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Lightbulb,
   Handshake,
@@ -22,10 +22,12 @@ const values = [
 ];
 
 const team = [
-  { name: "Carlos Mendoza", role: "Director General", initials: "CM" },
-  { name: "Ana García", role: "Directora de Marketing", initials: "AG" },
-  { name: "Roberto Silva", role: "Director de Tecnología", initials: "RS" },
-  { name: "María López", role: "Diseñadora Senior", initials: "ML" },
+  { name: "José Ángel Gutiérrez", role: "Director General", initials: "JA", avatar: "/images/team-jose-angel.png" },
+  { name: "Sigli Benoit", role: "Directora de Marketing", initials: "SB", avatar: "/images/team-sigli.png" },
+  { name: "Edson Espinoza", role: "Director de Tecnología", initials: "EE", avatar: "/images/team-edson.png" },
+  { name: "María López", role: "Diseñadora Senior", initials: "ML", avatar: "/images/team-maria.png" },
+  { name: "José Max", role: "Diseñador General", initials: "JM", avatar: "/images/team-jose-max.png" },
+  { name: "Angel Eduardo", role: "Programador General", initials: "AE", avatar: "/images/team-angel-eduardo.png" },
 ];
 
 export default function Nosotros() {
@@ -118,10 +120,11 @@ export default function Nosotros() {
             <h2 className="text-3xl font-bold text-foreground text-center mb-10">
               Nuestro Equipo
             </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
               {team.map((member) => (
                 <div key={member.name} className="text-center" data-testid={`card-team-${member.initials}`}>
                   <Avatar className="w-20 h-20 mx-auto mb-3">
+                    <AvatarImage src={member.avatar} alt={member.name} />
                     <AvatarFallback className="bg-primary/10 text-primary text-xl font-bold">
                       {member.initials}
                     </AvatarFallback>
