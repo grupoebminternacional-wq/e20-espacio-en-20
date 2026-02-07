@@ -1,7 +1,25 @@
 import { db } from "./db";
+import { eq } from "drizzle-orm";
 import { blogPosts, portfolioItems, testimonials } from "@shared/schema";
 
+async function ensureCIEPortfolioItem() {
+  const existing = await db.select().from(portfolioItems).where(eq(portfolioItems.title, 'CIE - Comunicación Interna de la Empresa'));
+  if (existing.length === 0) {
+    await db.insert(portfolioItems).values({
+      title: "CIE - Comunicación Interna de la Empresa",
+      client: "Visual World Ópticas",
+      category: "Desarrollo de Software",
+      description: "Red social corporativa exclusiva con capas de seguridad para mantener la comunicación dentro de la empresa. Funciona solo en horario laboral y mantiene la capacitación continua del personal, creando un ambiente de trabajo armónico y ahorrando tiempo y dinero en la capacitación de empleados.",
+      result: "Comunicación segura y capacitación continua",
+      services: ["Desarrollo de Software", "Consultoría Digital", "ERP/CRM"],
+    });
+    console.log("CIE portfolio item inserted");
+  }
+}
+
 export async function seed() {
+  await ensureCIEPortfolioItem();
+
   const existingTestimonials = await db.select().from(testimonials);
   if (existingTestimonials.length > 0) return;
 
