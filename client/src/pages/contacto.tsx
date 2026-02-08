@@ -280,7 +280,7 @@ export default function Contacto() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-foreground">Email</p>
-                      <p className="text-sm text-muted-foreground">info@e20.com.mx</p>
+                      <p className="text-sm text-muted-foreground">contacto@e20.com.mx</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">

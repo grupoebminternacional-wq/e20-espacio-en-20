@@ -108,7 +108,7 @@
 |-------|-------|
 | **Dirección** | Ciudad de Puebla, Puebla |
 | **Teléfono** | 221 282 5339 |
-| **Email** | info@e20.com.mx |
+| **Email** | contacto@e20.com.mx |
 | **Horario** | Lun - Vie: 9:00 - 18:00 |
 | **Redes Sociales** | Facebook, Instagram, LinkedIn (NO TikTok) |
 | **Correo corporativo** | contacto@e20.com.mx (pendiente configurar en Cloudflare) |

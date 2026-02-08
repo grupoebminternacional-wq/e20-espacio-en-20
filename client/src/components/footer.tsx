@@ -77,7 +77,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-wider mb-4 text-white">Contacto</h3>
             <ul className="space-y-3">
-              <li className="text-sm text-gray-400">info@e20.com.mx</li>
+              <li className="text-sm text-gray-400">contacto@e20.com.mx</li>
               <li className="text-sm text-gray-400">221 282 5339</li>
               <li className="text-sm text-gray-400">Ciudad de Puebla, Puebla</li>
               <li className="text-sm text-gray-400">Lun - Vie: 9:00 - 18:00</li>
