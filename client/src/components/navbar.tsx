@@ -8,6 +8,7 @@ import { useTheme } from "@/components/theme-provider";
 const navLinks = [
   { href: "/", label: "Inicio" },
   { href: "/servicios", label: "Servicios" },
+  { href: "/erp", label: "ERP ContableMX" },
   { href: "/nosotros", label: "Nosotros" },
   { href: "/portafolio", label: "Portafolio" },
   { href: "/blog", label: "Blog" },
