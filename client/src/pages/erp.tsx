@@ -22,10 +22,15 @@ import {
   Crown,
   Stamp,
   ExternalLink,
+  Rocket,
+  Target,
+  TrendingUp,
 } from "lucide-react";
+import pricingImage from "@assets/Captura_de_pantalla_2026-02-27_193125_1772576596565.png";
 
-const SAAS_URL = "https://saas.e20.com.mx";
-const CFDI_URL = "https://saas.e20.com.mx/cfdi/timbres";
+const CONTABLEMX_URL = "https://contablemx.e20.com.mx";
+const CONTABLEMX_REGISTRO = "https://contablemx.e20.com.mx/registro";
+const CFDI_URL = "https://contablemx.e20.com.mx/cfdi/timbres";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   FileText,
@@ -48,6 +53,10 @@ interface Plan {
   caracteristicas: string[];
   destacado?: boolean;
   urlRegistro: string;
+  categoria: string;
+  etiqueta: string;
+  botonTexto: string;
+  botonColor: "green" | "blue" | "orange";
 }
 
 interface Modulo {
@@ -68,48 +77,141 @@ interface Paquete {
 
 const fallbackPlanes: Plan[] = [
   {
-    nombre: "Basico",
+    nombre: "PRUEBA GRATUITA",
+    precio: 0,
+    periodo: "100 dias de prueba",
+    descripcion: "",
+    categoria: "ERP - INICIO",
+    etiqueta: "ERP - INICIO",
+    caracteristicas: [
+      "6 Timbres de regalo",
+      "Modulo Facturacion",
+      "Recompra libre",
+      "Asistencia IA",
+    ],
+    urlRegistro: CONTABLEMX_REGISTRO,
+    botonTexto: "PROBAR GRATIS",
+    botonColor: "green",
+  },
+  {
+    nombre: "PROFESIONISTAS",
+    precio: 500,
+    periodo: "anual",
+    descripcion: "",
+    categoria: "ERP - INDEPENDIENTE",
+    etiqueta: "ERP - INDEPENDIENTE",
+    caracteristicas: [
+      "Ideal 1 Factura al mes",
+      "Cobro de comisiones",
+      "Facturacion Digital",
+      "Asistencia IA",
+    ],
+    urlRegistro: CONTABLEMX_URL,
+    botonTexto: "PLAN ANUAL",
+    botonColor: "green",
+  },
+  {
+    nombre: "BASICO",
     precio: 499,
-    periodo: "mes",
-    descripcion: "Ideal para emprendedores y negocios que inician su digitalizacion.",
+    periodo: "mensual",
+    descripcion: "",
+    categoria: "ERP - EMPRESA",
+    etiqueta: "ERP - EMPRESA",
     caracteristicas: [
-      "Facturacion electronica CFDI 4.0",
-      "CRM basico",
-      "Soporte por correo",
-      "1 usuario incluido",
+      "Asistencia Personalizada",
+      "Alta por SEFINPAT",
+      "Modulos Configurados",
+      "Gestion Usuarios",
     ],
-    urlRegistro: SAAS_URL,
+    urlRegistro: CONTABLEMX_URL,
+    botonTexto: "CONTRATAR",
+    botonColor: "blue",
   },
   {
-    nombre: "Profesional",
+    nombre: "PROFESIONAL",
     precio: 999,
-    periodo: "mes",
-    descripcion: "Para PYMEs que necesitan control total de su operacion.",
-    caracteristicas: [
-      "Todo lo del plan Basico",
-      "Nomina y contabilidad",
-      "Inventarios y compras",
-      "Reportes avanzados",
-      "5 usuarios incluidos",
-      "Soporte prioritario",
-    ],
+    periodo: "mensual",
+    descripcion: "",
+    categoria: "ERP - AVANZADO",
+    etiqueta: "ERP - AVANZADO",
     destacado: true,
-    urlRegistro: SAAS_URL,
+    caracteristicas: [
+      "Asistencia Personalizada",
+      "Automatizacion Full",
+      "Gestion Multitarea",
+      "Control Inventarios",
+    ],
+    urlRegistro: CONTABLEMX_URL,
+    botonTexto: "CONTRATAR",
+    botonColor: "green",
   },
   {
-    nombre: "Empresarial",
+    nombre: "EMPRESARIAL",
     precio: 1999,
-    periodo: "mes",
-    descripcion: "Solucion completa para empresas con operaciones complejas.",
+    periodo: "mensual",
+    descripcion: "",
+    categoria: "ERP - CORPORATIVO",
+    etiqueta: "ERP - CORPORATIVO",
     caracteristicas: [
-      "Todo lo del plan Profesional",
-      "Conciliacion bancaria",
-      "Multi-sucursal",
-      "API de integracion",
-      "Usuarios ilimitados",
-      "Soporte dedicado 24/7",
+      "Asistencia Personalizada",
+      "Estrategia Ilimitada",
+      "Todos los Modulos",
+      "Soporte 24/7 Premium",
     ],
-    urlRegistro: SAAS_URL,
+    urlRegistro: CONTABLEMX_URL,
+    botonTexto: "CONTRATAR",
+    botonColor: "green",
+  },
+  {
+    nombre: "PRUEBA CRM",
+    precio: 0,
+    periodo: "30 dias de prueba",
+    descripcion: "",
+    categoria: "CRM - INICIO",
+    etiqueta: "CRM - INICIO",
+    caracteristicas: [
+      "Lanzar Campanas",
+      "Modulo Ventas Unico",
+      "Facil y Simple",
+      "Practica Prospectos",
+    ],
+    urlRegistro: CONTABLEMX_REGISTRO,
+    botonTexto: "PROBAR CRM",
+    botonColor: "orange",
+  },
+  {
+    nombre: "CRM BASICO",
+    precio: 399,
+    periodo: "mensual",
+    descripcion: "",
+    categoria: "CRM - ESENCIAL",
+    etiqueta: "CRM - ESENCIAL",
+    caracteristicas: [
+      "Gestion de Prospectos",
+      "Embudo de Ventas",
+      "Seguimiento Email",
+      "Reportes Basicos",
+    ],
+    urlRegistro: CONTABLEMX_URL,
+    botonTexto: "ADQUIRIR CRM",
+    botonColor: "blue",
+  },
+  {
+    nombre: "CRM PRO",
+    precio: 799,
+    periodo: "mensual",
+    descripcion: "",
+    categoria: "CRM - FULL IMPACTO",
+    etiqueta: "CRM - FULL IMPACTO",
+    caracteristicas: [
+      "Todas Redes Sociales",
+      "Lanzamiento Formatos",
+      "Publicidad Total",
+      "Automatizacion Full",
+    ],
+    urlRegistro: CONTABLEMX_URL,
+    botonTexto: "CONTRATAR PRO",
+    botonColor: "orange",
   },
 ];
 
@@ -137,45 +239,73 @@ function formatPrice(price: number): string {
   }).format(price);
 }
 
-function PlanIcon({ name, className }: { name: string; className?: string }) {
-  if (name === "Basico" || name === "Básico") return <Zap className={className} />;
-  if (name === "Profesional") return <Star className={className} />;
-  return <Crown className={className} />;
+function PlanIcon({ categoria, className }: { categoria: string; className?: string }) {
+  if (categoria.includes("INICIO")) return <Zap className={className} />;
+  if (categoria.includes("INDEPENDIENTE")) return <Rocket className={className} />;
+  if (categoria.includes("EMPRESA")) return <Building className={className} />;
+  if (categoria.includes("AVANZADO")) return <Star className={className} />;
+  if (categoria.includes("CORPORATIVO")) return <Crown className={className} />;
+  if (categoria.includes("ESENCIAL")) return <Target className={className} />;
+  if (categoria.includes("FULL IMPACTO")) return <TrendingUp className={className} />;
+  return <Zap className={className} />;
 }
 
-const planOrder = ["Básico", "Basico", "Profesional", "Empresarial"];
+function getButtonClasses(color: "green" | "blue" | "orange"): string {
+  switch (color) {
+    case "green":
+      return "bg-green-500 text-white border-green-500";
+    case "blue":
+      return "bg-blue-500 text-white border-blue-500";
+    case "orange":
+      return "bg-orange-500 text-white border-orange-500";
+  }
+}
+
+function getAccentColor(color: "green" | "blue" | "orange"): string {
+  switch (color) {
+    case "green":
+      return "bg-green-500";
+    case "blue":
+      return "bg-blue-500";
+    case "orange":
+      return "bg-orange-500";
+  }
+}
 
 export default function ERP() {
   useEffect(() => {
     document.title = "ERP ContableMX - Sistema de Gestion Empresarial | Espacio en 20";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "ERP ContableMX: facturacion electronica CFDI 4.0, contabilidad, nomina, inventarios y CRM para PYMEs mexicanas. Planes desde $499 MXN/mes.");
+      meta.setAttribute("content", "ERP ContableMX: facturacion electronica CFDI 4.0, contabilidad, nomina, inventarios, CRM y marketing para PYMEs mexicanas. Planes ERP desde $0 y CRM desde $399 MXN/mes.");
     }
   }, []);
 
   const { data: planesData, isLoading: loadingPlanes } = useQuery<{ planes: Plan[] }>({
     queryKey: ["erp-planes"],
-    queryFn: () => fetchExternal(`${SAAS_URL}/api/public/planes`),
+    queryFn: () => fetchExternal(`${CONTABLEMX_URL}/api/public/planes`),
     staleTime: 5 * 60 * 1000,
     retry: 1,
   });
 
   const { data: modulosData, isLoading: loadingModulos } = useQuery<{ modulos: Modulo[] }>({
     queryKey: ["erp-modulos"],
-    queryFn: () => fetchExternal(`${SAAS_URL}/api/public/modulos`),
+    queryFn: () => fetchExternal(`${CONTABLEMX_URL}/api/public/modulos`),
     staleTime: 5 * 60 * 1000,
     retry: 1,
   });
 
   const { data: paquetesData, isLoading: loadingPaquetes } = useQuery<{ paquetes: Paquete[] }>({
     queryKey: ["erp-paquetes"],
-    queryFn: () => fetchExternal(`${SAAS_URL}/api/public/paquetes`),
+    queryFn: () => fetchExternal(`${CONTABLEMX_URL}/api/public/paquetes`),
     staleTime: 5 * 60 * 1000,
     retry: 1,
   });
 
-  const planes = planesData?.planes?.length ? planesData.planes : fallbackPlanes;
+  const apiPlanes = planesData?.planes;
+  const planes = (apiPlanes && apiPlanes.length >= 8 && apiPlanes.every((p: any) => p.categoria && p.botonTexto))
+    ? apiPlanes
+    : fallbackPlanes;
   const modulos = modulosData?.modulos || [];
   const paquetes = paquetesData?.paquetes?.length ? paquetesData.paquetes : fallbackPaquetes;
 
@@ -196,9 +326,9 @@ export default function ERP() {
             Sistema integral de gestion empresarial: facturacion electronica CFDI 4.0,
             contabilidad, nomina, inventarios, CRM y mas. Todo en la nube, listo para tu PYME.
           </p>
-          <a href={SAAS_URL} target="_blank" rel="noopener noreferrer" data-testid="link-erp-hero-cta">
+          <a href={CONTABLEMX_REGISTRO} target="_blank" rel="noopener noreferrer" data-testid="link-erp-hero-cta">
             <Button size="lg" data-testid="button-erp-hero-cta">
-              Comenzar Ahora
+              PROBAR GRATIS
               <ExternalLink className="w-4 h-4 ml-2" />
             </Button>
           </a>
@@ -209,7 +339,7 @@ export default function ERP() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4" data-testid="text-planes-title">
-              Planes de Suscripcion
+              Planes y Precios
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto" data-testid="text-planes-description">
               Elige el plan que mejor se adapte a las necesidades de tu empresa.
@@ -217,92 +347,85 @@ export default function ERP() {
             </p>
           </div>
 
+          <div className="mb-12 max-w-5xl mx-auto">
+            <img
+              src={pricingImage}
+              alt="Planes y precios de ERP ContableMX y CRM"
+              className="w-full rounded-lg shadow-lg"
+              data-testid="img-pricing-reference"
+            />
+          </div>
+
           {loadingPlanes ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {[1, 2, 3].map((i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                 <Skeleton key={i} className="h-96 rounded-lg" />
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {planes
-                .sort((a, b) => {
-                  const ai = planOrder.indexOf(a.nombre);
-                  const bi = planOrder.indexOf(b.nombre);
-                  return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
-                })
-                .slice(0, 3)
-                .map((plan, idx) => {
-                  const isPopular = plan.destacado || plan.nombre === "Profesional";
-                  return (
-                    <Card
-                      key={plan.nombre}
-                      className={`relative p-8 flex flex-col ${
-                        isPopular
-                          ? "border-primary shadow-lg shadow-primary/10 scale-[1.02]"
-                          : ""
-                      }`}
-                      data-testid={`card-plan-${idx}`}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {planes.map((plan, idx) => {
+                const p = plan as Plan;
+                const color = p.botonColor || "green";
+                const categoria = p.categoria || p.etiqueta || "";
+                const botonTexto = p.botonTexto || "CONTRATAR";
+                const urlRegistro = p.urlRegistro || CONTABLEMX_URL;
+
+                return (
+                  <Card
+                    key={`${plan.nombre}-${idx}`}
+                    className={`relative overflow-hidden p-6 flex flex-col ${
+                      plan.destacado ? "shadow-lg shadow-primary/10 scale-[1.01]" : ""
+                    }`}
+                    data-testid={`card-plan-${idx}`}
+                  >
+                    <div className={`absolute top-0 left-0 right-0 h-1 ${getAccentColor(color)}`} />
+                    <div className="text-center mb-4">
+                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3" data-testid={`text-plan-categoria-${idx}`}>
+                        {categoria}
+                      </p>
+                      <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                        <PlanIcon
+                          categoria={categoria}
+                          className="w-6 h-6 text-primary"
+                        />
+                      </div>
+                      <h3 className="text-lg font-bold text-foreground" data-testid={`text-plan-name-${idx}`}>
+                        {plan.nombre}
+                      </h3>
+                    </div>
+                    <div className="text-center mb-2">
+                      <span className="text-3xl font-bold text-foreground" data-testid={`text-plan-price-${idx}`}>
+                        ${plan.precio.toLocaleString("es-MX")}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground text-center mb-4 uppercase" data-testid={`text-plan-periodo-${idx}`}>
+                      {plan.periodo}
+                    </p>
+                    <div className="space-y-2.5 flex-1 mb-6">
+                      {plan.caracteristicas.map((feat) => (
+                        <div key={feat} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <a
+                      href={urlRegistro}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`link-plan-register-${idx}`}
                     >
-                      {isPopular && (
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                          <Badge variant="default" data-testid="badge-popular">
-                            Mas Popular
-                          </Badge>
-                        </div>
-                      )}
-                      <div className="text-center mb-6">
-                        <div
-                          className={`w-14 h-14 rounded-md flex items-center justify-center mx-auto mb-4 ${
-                            isPopular ? "bg-primary" : "bg-primary/10"
-                          }`}
-                        >
-                          <PlanIcon
-                            name={plan.nombre}
-                            className={`w-7 h-7 ${isPopular ? "text-white" : "text-primary"}`}
-                          />
-                        </div>
-                        <h3 className="text-xl font-bold text-foreground" data-testid={`text-plan-name-${idx}`}>
-                          {plan.nombre}
-                        </h3>
-                        <p className="text-sm text-muted-foreground mt-1" data-testid={`text-plan-desc-${idx}`}>
-                          {plan.descripcion}
-                        </p>
-                      </div>
-                      <div className="text-center mb-6">
-                        <span className="text-4xl font-bold text-foreground" data-testid={`text-plan-price-${idx}`}>
-                          {formatPrice(plan.precio)}
-                        </span>
-                        <span className="text-muted-foreground text-sm ml-1">
-                          /{plan.periodo}
-                        </span>
-                      </div>
-                      <div className="space-y-3 flex-1 mb-8">
-                        {plan.caracteristicas.map((feat) => (
-                          <div key={feat} className="flex items-start gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                            <span className="text-sm text-muted-foreground">{feat}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <a
-                        href={plan.urlRegistro || SAAS_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-testid={`link-plan-register-${idx}`}
+                      <Button
+                        className={`w-full font-bold text-sm ${getButtonClasses(color)}`}
+                        data-testid={`button-plan-${idx}`}
                       >
-                        <Button
-                          className="w-full font-semibold"
-                          variant={isPopular ? "default" : "outline"}
-                          data-testid={`button-plan-${idx}`}
-                        >
-                          Registrarse
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </a>
-                    </Card>
-                  );
-                })}
+                        {botonTexto}
+                      </Button>
+                    </a>
+                  </Card>
+                );
+              })}
             </div>
           )}
         </div>
@@ -466,13 +589,13 @@ export default function ERP() {
             Prueba ERP ContableMX sin compromiso. Registrate y comienza a
             facturar, administrar y crecer con tecnologia mexicana.
           </p>
-          <a href={SAAS_URL} target="_blank" rel="noopener noreferrer" data-testid="link-erp-bottom-cta">
+          <a href={CONTABLEMX_REGISTRO} target="_blank" rel="noopener noreferrer" data-testid="link-erp-bottom-cta">
             <Button
               size="lg"
               className="bg-white text-primary font-semibold border-white/80"
               data-testid="button-erp-bottom-cta"
             >
-              Registrarse Gratis
+              PROBAR GRATIS
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </a>

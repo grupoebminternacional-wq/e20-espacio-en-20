@@ -14,7 +14,7 @@ Corporate website for Espacio en 20 (E20), a Mexican digital marketing agency sp
 ## Pages
 1. **Home** (/) - Hero, value props, featured services, stats (50 empresas, 170 campanas), testimonials carousel, CTA
 2. **Servicios** (/servicios) - Detailed service cards with E20 focus
-3. **ERP ContableMX** (/erp) - Product showcase consuming 3 public APIs from saas.e20.com.mx (plans, modules, CFDI stamp packages) with fallback data. CTAs link to saas.e20.com.mx
+3. **ERP ContableMX** (/erp) - Product showcase with 8 plans (5 ERP + 3 CRM) in 4-column grid, consuming 3 public APIs from contablemx.e20.com.mx (plans, modules, CFDI stamp packages) with fallback data. CTAs: "PROBAR GRATIS" -> contablemx.e20.com.mx/registro, "CONTRATAR" -> contablemx.e20.com.mx. Includes pricing reference image.
 4. **Nosotros** (/nosotros) - History, mission, vision, values, team (6 members with Pixar avatars)
 5. **Portafolio** (/portafolio) - Filterable portfolio with project cards (including CIE)
 6. **Blog** (/blog) - Blog posts with categories and search
@@ -54,11 +54,14 @@ Corporate website for Espacio en 20 (E20), a Mexican digital marketing agency sp
 - Angel Eduardo - Programador General
 
 ## ERP ContableMX External APIs (public, no auth required)
-- GET https://saas.e20.com.mx/api/public/planes - Subscription plans with pricing
-- GET https://saas.e20.com.mx/api/public/modulos - ERP module catalog (10 modules)
-- GET https://saas.e20.com.mx/api/public/paquetes - CFDI stamp packages
+- GET https://contablemx.e20.com.mx/api/public/planes - Subscription plans with pricing
+- GET https://contablemx.e20.com.mx/api/public/modulos - ERP module catalog (10 modules)
+- GET https://contablemx.e20.com.mx/api/public/paquetes - CFDI stamp packages
 - All APIs have CORS enabled and return JSON
 - Page uses fallback data when API returns empty arrays
+- "PROBAR GRATIS" buttons link to https://contablemx.e20.com.mx/registro
+- "CONTRATAR" buttons link to https://contablemx.e20.com.mx
+- 8 plans total: 5 ERP (Prueba Gratuita, Profesionistas, Basico, Profesional, Empresarial) + 3 CRM (Prueba CRM, CRM Basico, CRM PRO)
 
 ## Current Version: v1.1
 See PROMPT_E20.md for full roadmap (v1.1 through v5.0).
