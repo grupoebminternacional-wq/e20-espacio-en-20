@@ -26,7 +26,6 @@ import {
   Target,
   TrendingUp,
 } from "lucide-react";
-import pricingImage from "@assets/Captura_de_pantalla_2026-02-27_193125_1772576596565.png";
 
 const CONTABLEMX_URL = "https://contablemx.e20.com.mx";
 const CONTABLEMX_REGISTRO = "https://contablemx.e20.com.mx/registro";
@@ -345,15 +344,6 @@ export default function ERP() {
               Elige el plan que mejor se adapte a las necesidades de tu empresa.
               Todos incluyen soporte y actualizaciones.
             </p>
-          </div>
-
-          <div className="mb-12 max-w-5xl mx-auto">
-            <img
-              src={pricingImage}
-              alt="Planes y precios de ERP ContableMX y CRM"
-              className="w-full rounded-lg shadow-lg"
-              data-testid="img-pricing-reference"
-            />
           </div>
 
           {loadingPlanes ? (
