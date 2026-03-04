@@ -14,6 +14,7 @@ import Blog from "@/pages/blog";
 import Testimoniales from "@/pages/testimoniales";
 import Contacto from "@/pages/contacto";
 import ERP from "@/pages/erp";
+import Privacidad from "@/pages/privacidad";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/testimoniales" component={Testimoniales} />
       <Route path="/erp" component={ERP} />
       <Route path="/contacto" component={Contacto} />
+      <Route path="/privacidad" component={Privacidad} />
       <Route component={NotFound} />
     </Switch>
   );

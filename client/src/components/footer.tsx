@@ -89,9 +89,11 @@ export default function Footer() {
           <p className="text-xs text-gray-500">
             &copy; {new Date().getFullYear()} Espacio en 20. Todos los derechos reservados.
           </p>
-          <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors" data-testid="link-privacy">
-            Aviso de Privacidad
-          </a>
+          <Link href="/privacidad">
+            <span className="text-xs text-gray-500 hover:text-gray-300 transition-colors cursor-pointer" data-testid="link-privacy">
+              Aviso de Privacidad
+            </span>
+          </Link>
         </div>
       </div>
     </footer>
