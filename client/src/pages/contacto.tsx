@@ -271,7 +271,7 @@ export default function Contacto() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-foreground">Teléfono</p>
-                      <p className="text-sm text-muted-foreground">221 282 5339</p>
+                      <p className="text-sm text-muted-foreground">222 706 9668</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">

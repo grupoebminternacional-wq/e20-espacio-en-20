@@ -41,7 +41,7 @@ Corporate website for Espacio en 20 (E20), a Mexican digital marketing agency sp
 
 ## Contact Info
 - Location: Ciudad de Puebla, Puebla
-- Phone: 221 282 5339
+- Phone: 222 706 9668
 - Email: contacto@e20.com.mx
 - Social: Facebook, Instagram, LinkedIn (NO TikTok)
 
