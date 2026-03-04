@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import FloatingHelp from "@/components/floating-help";
 import Home from "@/pages/home";
 import Servicios from "@/pages/servicios";
 import Nosotros from "@/pages/nosotros";
@@ -46,6 +47,7 @@ function App() {
             </main>
             <Footer />
           </div>
+          <FloatingHelp />
           <Toaster />
         </TooltipProvider>
       </QueryClientProvider>
