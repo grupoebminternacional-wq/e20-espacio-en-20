@@ -249,26 +249,14 @@ function PlanIcon({ categoria, className }: { categoria: string; className?: str
   return <Zap className={className} />;
 }
 
-function getButtonClasses(color: "green" | "blue" | "orange"): string {
-  switch (color) {
-    case "green":
-      return "bg-green-500 text-white border-green-500";
-    case "blue":
-      return "bg-blue-500 text-white border-blue-500";
-    case "orange":
-      return "bg-orange-500 text-white border-orange-500";
-  }
-}
+const colorHexMap: Record<string, string> = {
+  green: "#22c55e",
+  blue: "#3b82f6",
+  orange: "#f97316",
+};
 
-function getAccentColor(color: "green" | "blue" | "orange"): string {
-  switch (color) {
-    case "green":
-      return "bg-green-500";
-    case "blue":
-      return "bg-blue-500";
-    case "orange":
-      return "bg-orange-500";
-  }
+function getColorHex(color: string): string {
+  return colorHexMap[color] ?? "#22c55e";
 }
 
 export default function ERP() {
@@ -306,7 +294,10 @@ export default function ERP() {
     ? apiPlanes
     : fallbackPlanes;
   const modulos = modulosData?.modulos || [];
-  const paquetes = paquetesData?.paquetes?.length ? paquetesData.paquetes : fallbackPaquetes;
+  const apiPaquetes = paquetesData?.paquetes;
+  const paquetes = (apiPaquetes && apiPaquetes.length > 0 && apiPaquetes.every((p: any) => typeof p.timbres === "number"))
+    ? apiPaquetes
+    : fallbackPaquetes;
 
   return (
     <div>
@@ -369,7 +360,7 @@ export default function ERP() {
                     }`}
                     data-testid={`card-plan-${idx}`}
                   >
-                    <div className={`absolute top-0 left-0 right-0 h-1 ${getAccentColor(color)}`} />
+                    <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: getColorHex(color) }} />
                     <div className="text-center mb-4">
                       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3" data-testid={`text-plan-categoria-${idx}`}>
                         {categoria}
@@ -407,7 +398,8 @@ export default function ERP() {
                       data-testid={`link-plan-register-${idx}`}
                     >
                       <Button
-                        className={`w-full font-bold text-sm ${getButtonClasses(color)}`}
+                        className="w-full font-bold text-sm"
+                        style={{ backgroundColor: getColorHex(color), borderColor: getColorHex(color), color: "#fff" }}
                         data-testid={`button-plan-${idx}`}
                       >
                         {botonTexto}
@@ -508,10 +500,12 @@ export default function ERP() {
               {paquetes
                 .sort((a, b) => a.precio - b.precio)
                 .map((paq, idx) => {
+                  const timbres = paq.timbres ?? 0;
+                  const precio = paq.precio ?? 0;
                   const unitPrice =
                     paq.precioUnitario ??
-                    (paq.timbres > 0
-                      ? Math.round((paq.precio / paq.timbres) * 100) / 100
+                    (timbres > 0
+                      ? Math.round((precio / timbres) * 100) / 100
                       : 0);
                   return (
                     <Card
@@ -528,7 +522,7 @@ export default function ERP() {
                             {paq.nombre}
                           </h3>
                           <p className="text-xs text-muted-foreground" data-testid={`text-paquete-timbres-${idx}`}>
-                            {paq.timbres.toLocaleString("es-MX")} timbres
+                            {timbres.toLocaleString("es-MX")} timbres
                           </p>
                         </div>
                       </div>
