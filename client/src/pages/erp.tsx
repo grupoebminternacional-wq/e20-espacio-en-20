@@ -215,12 +215,12 @@ const fallbackPlanes: Plan[] = [
 ];
 
 const fallbackPaquetes: Paquete[] = [
-  { nombre: "Mini", timbres: 10, precio: 100, precioUnitario: 10, urlCompra: CFDI_URL },
-  { nombre: "Basico", timbres: 25, precio: 237.50, precioUnitario: 9.50, urlCompra: CFDI_URL },
-  { nombre: "Estandar", timbres: 50, precio: 450, precioUnitario: 9, urlCompra: CFDI_URL },
-  { nombre: "Profesional", timbres: 100, precio: 880, precioUnitario: 8.80, urlCompra: CFDI_URL },
-  { nombre: "Empresarial", timbres: 500, precio: 4200, precioUnitario: 8.40, urlCompra: CFDI_URL },
-  { nombre: "Corporativo", timbres: 1000, precio: 8000, precioUnitario: 8, urlCompra: CFDI_URL },
+  { nombre: "Paquete Mini", timbres: 10, precio: 100, precioUnitario: 10, urlCompra: CFDI_URL },
+  { nombre: "Paquete Básico", timbres: 25, precio: 237.50, precioUnitario: 9.50, urlCompra: CFDI_URL },
+  { nombre: "Paquete Estándar", timbres: 50, precio: 450, precioUnitario: 9, urlCompra: CFDI_URL },
+  { nombre: "Paquete Profesional", timbres: 100, precio: 880, precioUnitario: 8.80, urlCompra: CFDI_URL },
+  { nombre: "Paquete Empresarial", timbres: 500, precio: 4200, precioUnitario: 8.40, urlCompra: CFDI_URL },
+  { nombre: "Paquete Corporativo", timbres: 1000, precio: 8000, precioUnitario: 8, urlCompra: CFDI_URL },
 ];
 
 async function fetchExternal<T>(url: string): Promise<T> {
