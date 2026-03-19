@@ -74,6 +74,16 @@ interface Paquete {
   urlCompra: string;
 }
 
+interface ApiPaquete {
+  priceId: string;
+  nombre: string;
+  cantidad: number;
+  precioTotal: number;
+  precioTimbre: number;
+  moneda: string;
+  incluyeIVA: boolean;
+}
+
 const fallbackPlanes: Plan[] = [
   {
     nombre: "PRUEBA GRATUITA",
@@ -214,14 +224,17 @@ const fallbackPlanes: Plan[] = [
   },
 ];
 
-const fallbackPaquetes: Paquete[] = [
-  { nombre: "Paquete Mini", timbres: 10, precio: 100, precioUnitario: 10, urlCompra: CFDI_URL },
-  { nombre: "Paquete Básico", timbres: 25, precio: 237.50, precioUnitario: 9.50, urlCompra: CFDI_URL },
-  { nombre: "Paquete Estándar", timbres: 50, precio: 450, precioUnitario: 9, urlCompra: CFDI_URL },
-  { nombre: "Paquete Profesional", timbres: 100, precio: 880, precioUnitario: 8.80, urlCompra: CFDI_URL },
-  { nombre: "Paquete Empresarial", timbres: 500, precio: 4200, precioUnitario: 8.40, urlCompra: CFDI_URL },
-  { nombre: "Paquete Corporativo", timbres: 1000, precio: 8000, precioUnitario: 8, urlCompra: CFDI_URL },
-];
+const PAQUETES_API = "https://contable-mx-grupoebminterna.replit.app/api/ext/v1/paquetes";
+
+function mapApiPaquete(p: ApiPaquete): Paquete {
+  return {
+    nombre: p.nombre,
+    timbres: p.cantidad,
+    precio: p.precioTotal,
+    precioUnitario: p.precioTimbre,
+    urlCompra: CFDI_URL,
+  };
+}
 
 async function fetchExternal<T>(url: string): Promise<T> {
   const res = await fetch(url);
@@ -291,9 +304,9 @@ export default function ERP() {
     retry: 1,
   });
 
-  const { data: paquetesData, isLoading: loadingPaquetes } = useQuery<{ paquetes: Paquete[] }>({
+  const { data: paquetesData, isLoading: loadingPaquetes } = useQuery<{ paquetes: ApiPaquete[] }>({
     queryKey: ["erp-paquetes"],
-    queryFn: () => fetchExternal(`${CONTABLEMX_URL}/api/public/paquetes`),
+    queryFn: () => fetchExternal(PAQUETES_API),
     staleTime: 5 * 60 * 1000,
     retry: 1,
   });
@@ -303,10 +316,9 @@ export default function ERP() {
     ? apiPlanes
     : fallbackPlanes;
   const modulos = modulosData?.modulos || [];
-  const apiPaquetes = paquetesData?.paquetes;
-  const paquetes = (apiPaquetes && apiPaquetes.length > 0 && apiPaquetes.every((p: any) => typeof p.timbres === "number"))
-    ? apiPaquetes
-    : fallbackPaquetes;
+  const paquetes: Paquete[] = (paquetesData?.paquetes ?? [])
+    .filter((p) => typeof p.cantidad === "number" && typeof p.precioTotal === "number")
+    .map(mapApiPaquete);
 
   return (
     <div>
@@ -504,6 +516,14 @@ export default function ERP() {
                 <Skeleton key={i} className="h-48 rounded-lg" />
               ))}
             </div>
+          ) : paquetes.length === 0 ? (
+            <p className="text-center text-muted-foreground py-8">
+              Informacion de paquetes no disponible temporalmente. Visita{" "}
+              <a href={CFDI_URL} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                contablemx.e20.com.mx
+              </a>{" "}
+              para conocer los precios actuales.
+            </p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {paquetes
