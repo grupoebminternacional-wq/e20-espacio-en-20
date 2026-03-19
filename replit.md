@@ -54,11 +54,11 @@ Corporate website for Espacio en 20 (E20), a Mexican digital marketing agency sp
 - Angel Eduardo - Programador General
 
 ## ERP ContableMX External APIs (public, no auth required)
-- GET https://contablemx.e20.com.mx/api/public/planes - Subscription plans with pricing
+- GET https://contablemx.e20.com.mx/api/public/planes - Subscription plans with pricing (fallback: hardcoded 8 plans)
 - GET https://contablemx.e20.com.mx/api/public/modulos - ERP module catalog (10 modules)
-- GET https://contablemx.e20.com.mx/api/public/paquetes - CFDI stamp packages
-- All APIs have CORS enabled and return JSON
-- Page uses fallback data when API returns empty arrays
+- GET /api/paquetes (backend proxy) → https://contable-mx-grupoebminterna.replit.app/api/ext/v1/paquetes - CFDI stamp packages from Stripe in real time (no CORS, no hardcoded fallback)
+- Paquetes API fields: nombre, cantidad (timbres), precioTotal, precioTimbre, moneda, incluyeIVA
+- Paquetes: 5 packages from Stripe (Mini 10/$100, Estándar 50/$400, Profesional 100/$600, Empresarial 500/$1600, Corporativo 1000/$2500)
 - "PROBAR GRATIS" buttons link to https://contablemx.e20.com.mx/registro
 - "CONTRATAR" buttons link to https://contablemx.e20.com.mx
 - 8 plans total: 5 ERP (Prueba Gratuita, Profesionistas, Basico, Profesional, Empresarial) + 3 CRM (Prueba CRM, CRM Basico, CRM PRO)

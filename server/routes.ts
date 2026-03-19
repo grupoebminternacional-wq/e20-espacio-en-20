@@ -31,5 +31,20 @@ export async function registerRoutes(
     res.json(contact);
   });
 
+  app.get("/api/paquetes", async (_req, res) => {
+    try {
+      const response = await fetch(
+        "https://contable-mx-grupoebminterna.replit.app/api/ext/v1/paquetes"
+      );
+      if (!response.ok) {
+        return res.status(502).json({ paquetes: [], error: "upstream error" });
+      }
+      const data = await response.json();
+      res.json(data);
+    } catch {
+      res.status(502).json({ paquetes: [], error: "upstream unavailable" });
+    }
+  });
+
   return httpServer;
 }

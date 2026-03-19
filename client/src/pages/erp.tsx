@@ -224,7 +224,7 @@ const fallbackPlanes: Plan[] = [
   },
 ];
 
-const PAQUETES_API = "https://contable-mx-grupoebminterna.replit.app/api/ext/v1/paquetes";
+const PAQUETES_API = "/api/paquetes";
 
 function mapApiPaquete(p: ApiPaquete): Paquete {
   return {
@@ -517,12 +517,8 @@ export default function ERP() {
               ))}
             </div>
           ) : paquetes.length === 0 ? (
-            <p className="text-center text-muted-foreground py-8">
-              Informacion de paquetes no disponible temporalmente. Visita{" "}
-              <a href={CFDI_URL} target="_blank" rel="noopener noreferrer" className="text-primary underline">
-                contablemx.e20.com.mx
-              </a>{" "}
-              para conocer los precios actuales.
+            <p className="text-center text-muted-foreground py-8" data-testid="text-paquetes-error">
+              Precios no disponibles en este momento.
             </p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
