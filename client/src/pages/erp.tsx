@@ -238,6 +238,15 @@ function formatPrice(price: number): string {
   }).format(price);
 }
 
+function formatUnitPrice(price: number): string {
+  return new Intl.NumberFormat("es-MX", {
+    style: "currency",
+    currency: "MXN",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  }).format(price);
+}
+
 function PlanIcon({ categoria, className }: { categoria: string; className?: string }) {
   if (categoria.includes("INICIO")) return <Zap className={className} />;
   if (categoria.includes("INDEPENDIENTE")) return <Rocket className={className} />;
@@ -536,7 +545,7 @@ export default function ERP() {
                       </div>
                       {unitPrice > 0 && (
                         <p className="text-xs text-muted-foreground mb-4" data-testid={`text-paquete-unit-${idx}`}>
-                          {formatPrice(unitPrice)} por timbre
+                          {formatUnitPrice(unitPrice)} por timbre
                         </p>
                       )}
                       <div className="mt-auto">
