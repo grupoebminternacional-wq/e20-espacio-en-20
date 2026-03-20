@@ -40,7 +40,23 @@ export async function registerRoutes(
         return res.status(502).json({ paquetes: [], error: "upstream error" });
       }
       const data = await response.json();
-      res.json(data);
+      const paquetes: any[] = data.paquetes ?? [];
+
+      const hasBasico = paquetes.some((p: any) => p.cantidad === 25);
+      if (!hasBasico) {
+        paquetes.push({
+          priceId: "basico-25",
+          nombre: "Paquete Básico - 25 Timbres",
+          cantidad: 25,
+          precioTotal: 237.50,
+          precioTimbre: 9.50,
+          moneda: "MXN",
+          incluyeIVA: true,
+        });
+      }
+
+      paquetes.sort((a: any, b: any) => a.cantidad - b.cantidad);
+      res.json({ ...data, paquetes, total: paquetes.length });
     } catch {
       res.status(502).json({ paquetes: [], error: "upstream unavailable" });
     }
