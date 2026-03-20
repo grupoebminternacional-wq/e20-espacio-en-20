@@ -247,7 +247,7 @@ function formatPrice(price: number): string {
     style: "currency",
     currency: "MXN",
     minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
+    maximumFractionDigits: 2,
   }).format(price);
 }
 
@@ -255,7 +255,7 @@ function formatUnitPrice(price: number): string {
   return new Intl.NumberFormat("es-MX", {
     style: "currency",
     currency: "MXN",
-    minimumFractionDigits: 0,
+    minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(price);
 }
