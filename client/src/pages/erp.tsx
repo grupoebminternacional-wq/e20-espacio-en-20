@@ -243,10 +243,11 @@ async function fetchExternal<T>(url: string): Promise<T> {
 }
 
 function formatPrice(price: number): string {
+  const hasCents = price % 1 !== 0;
   return new Intl.NumberFormat("es-MX", {
     style: "currency",
     currency: "MXN",
-    minimumFractionDigits: 0,
+    minimumFractionDigits: hasCents ? 2 : 0,
     maximumFractionDigits: 2,
   }).format(price);
 }
