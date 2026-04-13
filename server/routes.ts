@@ -3,6 +3,49 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
 
+const CRM_BASE = "https://contable-mx-grupoebminterna.replit.app";
+const CRM_RFC = "GUGA680216N48";
+
+async function enviarLeadACRM(data: {
+  fullName: string;
+  email: string;
+  phone: string;
+  company: string;
+  service: string;
+  message: string;
+}): Promise<void> {
+  const apiKey = process.env.CONTABLEMX_API_KEY;
+  if (!apiKey) {
+    console.warn("[CRM] CONTABLEMX_API_KEY no configurada — lead no enviado al CRM");
+    return;
+  }
+
+  const payload = {
+    empresa_destino_id: CRM_RFC,
+    nombre: data.fullName,
+    email: data.email,
+    telefono: data.phone,
+    empresa: data.company,
+    interes: data.service,
+    notas: data.message,
+    fuente: "sitio_web_e20",
+  };
+
+  const res = await fetch(`${CRM_BASE}/api/ext/v1/contactos/nuevo`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-API-Key": apiKey,
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`CRM respondió ${res.status}: ${text.slice(0, 200)}`);
+  }
+}
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
@@ -27,7 +70,13 @@ export async function registerRoutes(
     if (!parsed.success) {
       return res.status(400).json({ error: parsed.error.flatten() });
     }
+
     const contact = await storage.createContact(parsed.data);
+
+    enviarLeadACRM(parsed.data).catch((err) => {
+      console.error("[CRM] Error al enviar lead:", err.message);
+    });
+
     res.json(contact);
   });
 
