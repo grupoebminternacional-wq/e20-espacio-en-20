@@ -58,10 +58,27 @@ Corporate website for Espacio en 20 (E20), a Mexican digital marketing agency sp
 - GET https://contablemx.e20.com.mx/api/public/modulos - ERP module catalog (10 modules)
 - GET /api/paquetes (backend proxy) → https://contable-mx-grupoebminterna.replit.app/api/ext/v1/paquetes - CFDI stamp packages from Stripe in real time (no CORS, no hardcoded fallback)
 - Paquetes API fields: nombre, cantidad (timbres), precioTotal, precioTimbre, moneda, incluyeIVA
-- Paquetes: 5 packages from Stripe (Mini 10/$100, Estándar 50/$400, Profesional 100/$600, Empresarial 500/$1600, Corporativo 1000/$2500)
+- Paquetes: 6 packages (Mini 10/$100, Básico 25/$237.50, Estándar 50/$400, Profesional 100/$600, Empresarial 500/$1600, Corporativo 1000/$2500)
+- Backend proxy injects Básico (25 timbres/$237.50) if missing from external API
 - "PROBAR GRATIS" buttons link to https://contablemx.e20.com.mx/registro
 - "CONTRATAR" buttons link to https://contablemx.e20.com.mx
 - 8 plans total: 5 ERP (Prueba Gratuita, Profesionistas, Basico, Profesional, Empresarial) + 3 CRM (Prueba CRM, CRM Basico, CRM PRO)
+
+## ContableMX ERP — Grupo EBM Integration (authenticated endpoints)
+- Base URL: https://contable-mx-grupoebminterna.replit.app
+- Auth header: X-API-Key: <secret CONTABLEMX_API_KEY>
+- empresa_destino_id: always use RFC (NOT database ID)
+  - Espacio en 20 / José Ángel: RFC GUGA680216N48
+  - Sigli / Sieglinde:          RFC BEVS701129PC0
+  - Huacales / Fernanda:        RFC HULF891110NP8
+  - Visual World / Luis:        RFC REVL880910LA3
+- Endpoints:
+  - GET  /api/ext/v1/health           → verify ContableMX is online
+  - GET  /api/ext/v1/planes           → plans and pricing in real time
+  - GET  /api/ext/v1/paquetes         → CFDI stamp packages
+  - GET  /api/ext/v1/config/pcp       → Torre de Control config
+  - POST /api/ext/v1/contactos/nuevo  → send lead/contact to CRM
+  - POST /api/ext/v1/nomina/candidatos → register candidate in ATS
 
 ## Current Version: v1.1
 See PROMPT_E20.md for full roadmap (v1.1 through v5.0).
