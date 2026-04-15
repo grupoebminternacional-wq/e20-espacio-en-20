@@ -119,7 +119,7 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex items-center" data-testid="section-hero">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/hero-bg.png)" }}
+          style={{ backgroundImage: "url(/images/hero-bg.png)", filter: "brightness(1.23)" }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#111827]/75 via-[#111827]/55 to-[#111827]/40" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
