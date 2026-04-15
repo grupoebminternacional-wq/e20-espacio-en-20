@@ -121,7 +121,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url(/images/hero-bg.png)", filter: "brightness(1.23)" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#111827]/75 via-[#111827]/55 to-[#111827]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111827]/55 via-[#111827]/30 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-md px-3 py-1.5 mb-6">
