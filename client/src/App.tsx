@@ -10,7 +10,6 @@ import FloatingHelp from "@/components/floating-help";
 import Home from "@/pages/home";
 import Servicios from "@/pages/servicios";
 import Nosotros from "@/pages/nosotros";
-import Portafolio from "@/pages/portafolio";
 import Blog from "@/pages/blog";
 import Testimoniales from "@/pages/testimoniales";
 import Contacto from "@/pages/contacto";
@@ -24,7 +23,6 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/servicios" component={Servicios} />
       <Route path="/nosotros" component={Nosotros} />
-      <Route path="/portafolio" component={Portafolio} />
       <Route path="/blog" component={Blog} />
       <Route path="/testimoniales" component={Testimoniales} />
       <Route path="/erp" component={ERP} />
