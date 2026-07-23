@@ -224,7 +224,7 @@ const fallbackPlanes: Plan[] = [
   },
 ];
 
-const PAQUETES_API = "/api/paquetes";
+const PAQUETES_API = "https://contablemx.e20.com.mx/api/ext/v1/paquetes";
 
 function mapApiPaquete(p: ApiPaquete): Paquete {
   return {
