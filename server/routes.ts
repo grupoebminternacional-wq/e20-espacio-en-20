@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
 
-const CRM_BASE = "https://contable-mx-grupoebminterna.replit.app";
+const CRM_BASE = "https://contablemx.e20.com.mx";
 const CRM_RFC = "GUGA680216N48";
 
 async function enviarLeadACRM(data: {
@@ -83,7 +83,7 @@ export async function registerRoutes(
   app.get("/api/paquetes", async (_req, res) => {
     try {
       const response = await fetch(
-        "https://contable-mx-grupoebminterna.replit.app/api/ext/v1/paquetes"
+        "https://contablemx.e20.com.mx/api/ext/v1/paquetes"
       );
       if (!response.ok) {
         return res.status(502).json({ paquetes: [], error: "upstream error" });
