@@ -10,7 +10,6 @@ const navLinks = [
   { href: "/servicios", label: "Servicios" },
   { href: "/erp", label: "ERP ContableMX" },
   { href: "/nosotros", label: "Nosotros" },
-  { href: "/portafolio", label: "Portafolio" },
   { href: "/blog", label: "Blog" },
   { href: "/testimoniales", label: "Testimoniales" },
   { href: "/contacto", label: "Contacto" },
